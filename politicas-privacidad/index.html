@@ -261,6 +261,11 @@
     </main>
 
     <script>
+        const ES_BUTTON_ACTIVE = 'px-3 py-1.5 rounded border border-red-600 bg-red-600 text-white text-xs font-bold uppercase';
+        const ES_BUTTON_INACTIVE = 'px-3 py-1.5 rounded border border-red-600 text-red-600 text-xs font-bold uppercase';
+        const EN_BUTTON_ACTIVE = 'px-3 py-1.5 rounded border border-blue-600 bg-blue-600 text-white text-xs font-bold uppercase';
+        const EN_BUTTON_INACTIVE = 'px-3 py-1.5 rounded border border-blue-600 text-blue-600 text-xs font-bold uppercase';
+
         function switchLanguage(lang) {
             const esElements = document.querySelectorAll('.lang-es');
             const enElements = document.querySelectorAll('.lang-en');
@@ -270,14 +275,14 @@
             if (lang === 'en') {
                 esElements.forEach(el => el.classList.add('lang-hidden'));
                 enElements.forEach(el => el.classList.remove('lang-hidden'));
-                esBtn.className = 'px-3 py-1.5 rounded border border-red-600 text-red-600 text-xs font-bold uppercase';
-                enBtn.className = 'px-3 py-1.5 rounded border border-blue-600 bg-blue-600 text-white text-xs font-bold uppercase';
+                esBtn.className = ES_BUTTON_INACTIVE;
+                enBtn.className = EN_BUTTON_ACTIVE;
                 document.documentElement.lang = 'en';
             } else {
                 enElements.forEach(el => el.classList.add('lang-hidden'));
                 esElements.forEach(el => el.classList.remove('lang-hidden'));
-                esBtn.className = 'px-3 py-1.5 rounded border border-red-600 bg-red-600 text-white text-xs font-bold uppercase';
-                enBtn.className = 'px-3 py-1.5 rounded border border-blue-600 text-blue-600 text-xs font-bold uppercase';
+                esBtn.className = ES_BUTTON_ACTIVE;
+                enBtn.className = EN_BUTTON_INACTIVE;
                 document.documentElement.lang = 'es';
             }
 
